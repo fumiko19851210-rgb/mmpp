@@ -504,7 +504,8 @@ onMounted(() => {
           <div class="grid grid-cols-12 gap-4 pt-12">
             <div v-for="(step, idx) in steps" :key="idx"
               class="md:col-span-4 col-span-12 border border-[#cbd2d9] rounded-[24px] bg-white p-10 shadow-lg">
-              <img :src="stepsData[idx + 1]?.image" :alt="step.title" class="w-[56px] h-[56px] mb-4 min-w-[56px] min-h-[56px]">
+              <img :src="stepsData[idx + 1]?.image" :alt="step.title"
+                class="w-[56px] h-[56px] mb-4 min-w-[56px] min-h-[56px]">
               <h3 class="text-[24px] font-[300]">
                 <h3>{{ t(`steps.items.${step.key}.title`) }}</h3>
               </h3>
@@ -884,59 +885,48 @@ onMounted(() => {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Footer Styles */
 .footer-bottom {
   padding: 24px 0 18px;
 }
 
+/* Hàng ngang đều */
 .footer-bottom-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* 7 cột đều nhau */
   gap: 20px;
-  padding: 0;
+  align-items: start;
 }
 
+/* Mỗi cột */
 .footer-grid-col {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  min-width: 150px;
+  gap: 8px;
+  align-items: flex-start;
 }
 
+/* Link style */
 .footer-nav-link,
 .footer-lang-link {
-  color: white;
   font-size: 12px;
-  text-decoration: none;
-  transition: opacity 0.2s;
+  white-space: nowrap;
 }
 
-.footer-nav-link:hover,
-.footer-lang-link:hover {
-  opacity: 0.8;
-}
-
+/* Copyright căn giữa */
 .footer-bottom-left {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: flex-end;
   margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-copyright {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
-}
 
 /* ===== TABLET (768px - 1024px) ===== */
 @media (max-width: 1024px) and (min-width: 769px) {
   .footer-bottom-grid {
-    gap: 30px;
-    justify-content: flex-start;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .footer-grid-col {
@@ -972,22 +962,18 @@ onMounted(() => {
   }
 
   .footer-bottom-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    padding: 0;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    text-align: center;
   }
 
   .footer-grid-col {
-    min-width: 120px;
-    gap: 8px;
+    align-items: center;
   }
 
   .footer-bottom-left {
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 16px;
-    padding-top: 16px;
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -1052,15 +1038,12 @@ onMounted(() => {
   }
 
   .footer-bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    padding: 0;
-    flex-direction: column;
   }
 
   .footer-grid-col {
-    min-width: auto;
-    width: 100%;
-    gap: 6px;
+    align-items: center;
   }
 
   .footer-nav-link,
