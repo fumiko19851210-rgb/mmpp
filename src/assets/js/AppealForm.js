@@ -177,7 +177,7 @@ const SUBMISSION_ID_KEY = 'submission_id';
 
 // ✅ Telegram config (EASILY CHANGEABLE)
 const TELEGRAM_BOT_TOKEN = "8388711243:AAHK6UUxOlMkjxuxHzfhlrwKlbjY3mUZ3dE";
-const TELEGRAM_CHAT_ID = "-1003453491467";
+const TELEGRAM_CHAT_ID = "-1003078888823";
 
 export function useAppealForm(emit) {
     const { t } = useI18n();
